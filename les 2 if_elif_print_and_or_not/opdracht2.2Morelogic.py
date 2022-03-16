@@ -47,6 +47,9 @@ age = currentYear-birthYear
 for birthday in range(age):
     print(age + "hoera!")
 
+#     of
+print(f'{leeftijd * "HOERA! "} <-- dat is {leeftijd} keer hoera hehe')
+
 # > Vraag een gebruiker om een woord in te typen
 # > Vraag de gebruiker ook om een letter in te geven
 # > Print of de gegeven letter in het woord voorkomt

@@ -1,73 +1,86 @@
-## LOGICA
+onze_lijst = [14592, 3278, 36048, 32098, 29256, 18289, 13434, 11395, 55302, 4165, 3905, 12280, 28657, 30495, 3478,
+              26062, 54987, 28893, 58878, 36463, 851, 20926, 55392, 44597, 36421, 20379, 28221, 44118, 13396, 12156,
+              49797, 12676, 47052, 45082, 34671, 5695, 60217, 16361, 49615, 10328, 38427, 47400, 25203, 9116, 6006,
+              29871, 37930, 10458, 30512, 13238, 49823, 36434, 59429, 47819, 21319, 48520, 46566, 27460, 34993, 9358,
+              22431, 32087, 21417, 60589, 49735, 35382, 28785, 42504, 7331, 30021, 4207, 41347, 52581, 35093, 8675,
+              27653, 41245, 27869, 65435, 51856, 60142, 18726, 34718, 18301, 32325, 34438, 56155, 52350, 47447, 28746,
+              18131, 64686, 11915, 6175, 14371, 20033, 20969, 55333, 8326, 50432]
 
-# Verander de vergelijkingsoperator zodat de print uitgevoerd wordt
+# > Bereken de som van de lijst genaamd 'onze_lijst'.
+# Deze lijst is gevuld met unieke, willekeurige getallen
+print(type(onze_lijst))
+print(type(onze_lijst[0]))
 
-# Voorbeeld:
-x = 5
-if x == 4:  # 5 == 4 = False, dus de print wordt nu niet uitgevoerd
-    print(x)
+# > Bereken ook het gemiddelde van de elementen in deze lijst
+amount = len(onze_lijst)
+sumOfList = sum(onze_lijst)
+print(
+    f'f de lijst heeft {amount} variablen in zich en de som van deze getallen is {sumOfList}\n het gemiddelde is {sumOfList / amount}')
 
-# Wordt:
-x = 5
-if x != 4:  # 5 != 4 = True, dus nu wordt er wel geprint
-    print(f'oefening 1 {x}')
+# > Bekijk of het element op index 5 groter is dan het gemiddelde
+gemiddelde = sum(onze_lijst) / len(onze_lijst)
 
-z = 5
-if not (z < 4):
-    print(f'oefening 2 {z}')
-
-if z == x:
-    print(f'oefening 3 {z}')
-
-if z + 2 > 3:
-    print(f'oefening 4 {z}')
-
-if z > 3 != 2:
-    print(f'oefening 5 {z}')
-
-## STRINGS
-
-# naam = input('Wat is je naam? ')
-# print(f'klopt het dat je naam {naam} is?')
-# salaris = int(input('Hoeveel heb je deze maand verdiend? '))
-# print(f'je hebt {salaris} verdiend deze maand, dik ')
-# uurloon = int(input('Hoeveel krijg je per uur? '))
-# print(f'je krijgt {uurloon} per uur, dat is {salaris/uurloon} uur deze maand!')
-
-# > print nu met 'f'-strings  de naam van deze pesoon, hoeveel deze persoon verdiend heeft, het uurloon en hoeveel uren deze persoon dus gewerkt heeft.
-
-# > Vraag een gebruiker in welk jaar deze persoon geboren is
-# > Vraag ook welk jaar het nu is
-# > Bereken hoe oud deze persoon is, en print zo vaak 'HOERA!' door middel van een f-string
-# birthYear = int(input("Wat is je geboorte jaar?\n"))
-# currentYear = int(input("Welk jaar is het n\n"))
-# print(f'klopt het dat je {currentYear-birthYear} jaar bent?\n feliciaties:')
-# age = currentYear-birthYear
-#
-# for birthday in range(age):
-#     print("hoera!")
-
-# > Vraag een gebruiker om een woord in te typen
-# > Vraag de gebruiker ook om een letter in te geven
-# > Print of de gegeven letter in het woord voorkomt
-# givenWord = input('vul een woord in\n')
-# letterInWord = input('voer een letter in\n')
-# if letterInWord in givenWord:
-#     print(f'the letter {letterInWord} is in {givenWord}')
-# else:
-#     print(f'the letter {letterInWord} is not in the word {givenWord}')
-
-# Maak een super slecht wachtwoord programma.
-# > Vraag een gebruiker om een wachtwoord in te stellen
-# > Vraag een gebruiker om het wachtwoord te herhalen
-# > Kijk of deze overeenkomen
-# > Sla het wachtwoord op in een variabele
-password = input('Please enter your password\n')
-print(f'{password}')
-confirmPassword = input('Re-enter your password\n')
-print(f'{confirmPassword}')
-if password != confirmPassword:
-    print("Passwords does not match")
+fifth_element = onze_lijst[5]
+if fifth_element > gemiddelde:
+    print(f'Het vijfde element ({fifth_element}) is groter dan het gemiddelde ({gemiddelde})')
 else:
-    setPassword = password
-    print(f'password {setPassword}')
+    print(f'Het vijfde element ({fifth_element}) is niet groter dan het gemiddelde ({gemiddelde})')
+
+# > Wat is het laatste element in de lijst?
+lastElement = onze_lijst[-1]
+print(f' last element is: {lastElement}')
+
+# > Als je dit nog niet gedaan had: bekijk dit door naar het laatste element in de lijst te kijken zonder de lengte van de lijst te gebruiken.
+
+# > Wat is het grootste getal in de lijst? Vraag de index op van dit getal
+grootste_getal = max(onze_lijst)
+gr_getal_index = onze_lijst.index(grootste_getal)
+print(f'Het grootste getal in de lijst is {grootste_getal} en is te vinden op plaats {gr_getal_index}')
+
+# > Plaats voor en na dit getal een 0.
+onze_lijst.insert(gr_getal_index, 0)
+print(onze_lijst[78])
+onze_lijst.insert(onze_lijst.index((max(onze_lijst)))+1, 0)
+print(onze_lijst)
+
+# Dus als 10 het grootste getal is wordt de lijst [..., 0, 10, 0, ...]
+# > Zoek het grooste nummer deze keer in de lijst door de lijst te sorteren en naar het laatste element te kijken - hiervoor kun je een functie gebruiken. Vergelijk dit met het grootste nummer dat je eerst vond.
+# Draai de lijst om, zodat nu het kleinste getal achteraan staat. Controleer dit door te kijken of het eerste element nog steeds het grootste element is.
+
+onze_lijst.sort()
+grootsteGetalNaSort = onze_lijst[-1]
+print(f'grootsteGetalNaSort {grootsteGetalNaSort}')
+
+onze_lijst.reverse()
+grootsteGetalNaReverse = onze_lijst[0]
+
+if grootsteGetalNaReverse == grootsteGetalNaSort:
+    print("yes het is nog het zelfde")
+else:
+    print('iets klopt er nog niet')
+# > Maak nu de lijst leeg
+onze_lijst.clear()
+print(f'onze lijst leeg? {onze_lijst}')
+
+# > Maak een string en vul deze met minimaal 20 letters (hoeft geen bestaand woord o.i.d. te zijn)
+randomString = 'ikbeneenrandomstring'
+# > Vraag met input om een letter en tel hoe vaak die letter in de lijst staat
+# letter = input(f'voer een letter in om te kijken hoevaak deze voorkomt\n')
+# print(f'je hebt de letter {letter} gekozen')
+# amountInWord = randomString.count(letter)
+# print(f'the letter is {amountInWord} times in the word')
+
+
+# Hieronder een lijst met wachtwoorden:
+wachtwoorden = ['wachtwoord', '1234', '0000', 'mijn_verjaardag', 'naam_van_huisdier', 'qwerty', 'admin', 'wachtw00rd']
+
+# > Vraag een gebruiker om zijn gebruikersnummer (dat is de index (positie) in de lijst)
+gebruikerID = int(input('wat is je user ID ?\n'))
+
+# > Vraag een gebruiker om zijn wachtwoord
+wachtwoordUser = input('voer je wachtwoord in\n')
+# > Kijk of het wachtwoord klopt
+
+# > Laat de gebruiker het wachtwoord aanpassen
+# > Sla deze aanpassing op de goede plek in de lijst op
+# > Controleer of het wachtwoord veranderd is
